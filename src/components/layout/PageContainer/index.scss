@@ -1,0 +1,13 @@
+.page-content-container {
+  padding: 32px 24px 48px;
+  min-height: 100vh;
+  position: relative;
+}
+.page-content {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  &.size-standard {
+    max-width: 960px;
+  }
+}

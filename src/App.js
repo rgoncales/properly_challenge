@@ -17,6 +17,7 @@ const NavBarContainer = styled.div`
   height: 60px;
   position: sticky;
   top: 0;
+  z-index: 999;
 `
 
 const BodyContainer = styled.div`

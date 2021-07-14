@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import PageContainer from 'components/layout/PageContainer'
 
 const NavBar = () => {
-  return <div>Hello World</div>
+  return <PageContainer>Hello World</PageContainer>
 }
 
 NavBar.propTypes = {}
