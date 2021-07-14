@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import PageContainer from 'components/layout/PageContainer'
 import ImageCarousel from 'components/layout/ImageCarousel'
+import PropertyDetails from 'pages/PropertyView/Details'
 import { selectPropertyDetails } from 'redux/property/selectors'
 import { PropertyDetailsType } from 'customTypes'
 
@@ -16,7 +17,6 @@ const ImageContainer = styled.div`
 const DetailsContainer = styled.div`
   width: 100%;
   flex: 1;
-  background: red;
 `
 
 const RelatedPropertiesContainer = styled.div`
@@ -31,7 +31,9 @@ const NavBar = (props) => {
       <ImageContainer>
         <ImageCarousel imageList={props.details.pictures} />
       </ImageContainer>
-      <DetailsContainer />
+      <DetailsContainer>
+        <PropertyDetails details={props.details} />
+      </DetailsContainer>
       <RelatedPropertiesContainer />
     </PageContainer>
   )
