@@ -26,9 +26,9 @@ const ImageCarousel = (props) => {
     if (!props.imageList.length) {
       return <div> No Images </div>
     }
-    return props.imageList.map((url) => {
+    return props.imageList.map((url, index) => {
       return (
-        <CarouselItem>
+        <CarouselItem key={`carousel-img-${index}`}>
           <img src={url} alt="house-pic" />
         </CarouselItem>
       )

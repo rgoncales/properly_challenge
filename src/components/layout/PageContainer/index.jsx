@@ -20,7 +20,7 @@ const PageContainer = (props) => {
 }
 
 PageContainer.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.node.isRequired,
   size: PropTypes.oneOf(Object.values(SIZES)),
 }
 

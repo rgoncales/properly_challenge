@@ -1,8 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PageContainer from 'components/layout/PageContainer'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
+import PageContainer from 'components/layout/PageContainer'
 import ImageCarousel from 'components/layout/ImageCarousel'
+import { selectPropertyDetails } from 'redux/property/selectors'
+import { PropertyDetailsType } from 'customTypes'
 
 const ImageContainer = styled.div`
   width: 100%;
@@ -21,17 +24,12 @@ const RelatedPropertiesContainer = styled.div`
   background: pink;
 `
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
     <PageContainer>
+      <div onClick={() => console.log(props.details)}> test</div>
       <ImageContainer>
-        <ImageCarousel
-          imageList={[
-            'https://media.fromthegrapevine.com/assets/images/2015/3/hobbit-house.jpg.480x0_q71_crop-scale.jpg',
-            'https://media.fromthegrapevine.com/assets/images/2015/3/hobbit-house.jpg.480x0_q71_crop-scale.jpg',
-            'https://media.fromthegrapevine.com/assets/images/2015/3/hobbit-house.jpg.480x0_q71_crop-scale.jpg',
-          ]}
-        />
+        <ImageCarousel imageList={props.details.pictures} />
       </ImageContainer>
       <DetailsContainer />
       <RelatedPropertiesContainer />
@@ -39,8 +37,16 @@ const NavBar = () => {
   )
 }
 
-NavBar.propTypes = {}
+const mapStateToProps = (state) => {
+  return {
+    details: selectPropertyDetails(state),
+  }
+}
+
+NavBar.propTypes = {
+  details: PropertyDetailsType.isRequired,
+}
 
 NavBar.defaultProps = {}
 
-export default NavBar
+export default connect(mapStateToProps)(NavBar)
