@@ -6,6 +6,9 @@ import styled from 'styled-components'
  * use some library to display a carousel
  * added some mock code for now
  */
+const CarouselWrapper = styled.div`
+  margin: -4px;
+`
 
 const Carousel = styled.div`
   display: flex;
@@ -19,6 +22,8 @@ const CarouselItem = styled.div`
   align-items: center;
   justify-content: center;
   flex: 1;
+  border-radius: 5px;
+  margin: 4px;
 `
 
 const ImageCarousel = (props) => {
@@ -34,7 +39,11 @@ const ImageCarousel = (props) => {
       )
     })
   }
-  return <Carousel>{renderImages()}</Carousel>
+  return (
+    <CarouselWrapper>
+      <Carousel>{renderImages()}</Carousel>
+    </CarouselWrapper>
+  )
 }
 
 ImageCarousel.propTypes = {

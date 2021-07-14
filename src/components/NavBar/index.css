@@ -1,10 +1,17 @@
 .navbar {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.navbar__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 16px;
-  background: #fff;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  max-width: 960px;
 }
 
 .navbar__node {
@@ -17,12 +24,13 @@
 
 .navbar__logo {
   font-weight: 700;
-  color: #006d77;
+  color: #333;
+  font-size: 24px;
 }
 
 .navbar__profile {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 1px solid blue;
 }

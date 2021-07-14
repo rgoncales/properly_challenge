@@ -1,14 +1,19 @@
+.property-details {
+  overflow: hidden;
+}
+.t-simple-table {
+  border-collapse: separate;
+  border-spacing: 0 4px;
+  width: 100%;
+  margin: -4px 0;
+}
 .t-cell {
-  padding: 8px;
+  padding: 4px 8px;
 }
 .t-cell__name {
-  background: #b4cad1;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-radius: 16px;
 }
 .t-cell__value {
   text-align: right;
-  background: #edf6f9;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  width: 100%;
 }

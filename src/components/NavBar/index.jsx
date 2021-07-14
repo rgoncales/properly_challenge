@@ -8,8 +8,10 @@ const NavBar = () => {
   }
   return (
     <div className="navbar">
-      {renderNode(<div className="navbar__logo">Property'R'Us</div>)}
-      {renderNode(<div className="navbar__profile"></div>)}
+      <div className="navbar__inner">
+        {renderNode(<div className="navbar__logo">Property'R'Us</div>)}
+        {renderNode(<div className="navbar__profile"></div>)}
+      </div>
     </div>
   )
 }

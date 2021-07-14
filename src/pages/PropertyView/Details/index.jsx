@@ -21,20 +21,24 @@ Row.propTypes = {
 const Details = (props) => {
   const { details } = props
   return (
-    <table>
-      <tbody>
-        <Row label="Address" value={details.address} />
-        <Row label="Bathrooms" value={details.numOfBathrooms} />
-        <Row label="Bedrooms" value={details.numOfBedrooms} />
-        <Row label="Size" value={formatUtils.formatArea(details.size)} />
-        <Row
-          label="Maintenance"
-          value={formatUtils.formatPrice(details.maintenanceCost)}
-        />
-        <Row label="Price" value={formatUtils.formatPrice(details.price)} />
-        <Row label="List Date" value={formatUtils.exactDate(details.listedOn)} />
-      </tbody>
-    </table>
+    <div className="property-details">
+      <table className="t-simple-table">
+        <tbody>
+          <Row label="Bathrooms" value={details.numOfBathrooms} />
+          <Row label="Bedrooms" value={details.numOfBedrooms} />
+          <Row label="Size" value={formatUtils.formatArea(details.size)} />
+          <Row
+            label="Maintenance"
+            value={formatUtils.formatPrice(details.maintenanceCost)}
+          />
+          <Row label="Price" value={formatUtils.formatPrice(details.price)} />
+          <Row
+            label="List Date"
+            value={formatUtils.exactDate(details.listedOn)}
+          />
+        </tbody>
+      </table>
+    </div>
   )
 }
 
