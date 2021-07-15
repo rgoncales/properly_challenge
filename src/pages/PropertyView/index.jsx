@@ -8,11 +8,17 @@ import PropertyDetails from 'pages/PropertyView/Details'
 import PropertyPrice from 'pages/PropertyView/Price'
 import PropertyDescription from 'pages/PropertyView/Description'
 import PropertyAddress from 'pages/PropertyView/Address'
+import PropertyAgentInfo from 'pages/PropertyView/AgentInfo'
 import { selectPropertyDetails } from 'redux/property/selectors'
 import { PropertyDetailsType } from 'customTypes'
+import WithRightSideBar from 'components/layout/WithRightSideBar'
 
 const ImageContainer = styled.div`
   width: 100%;
+`
+
+const MainContent = styled.div`
+  margin-top: 32px;
 `
 
 const DetailsContainer = styled.div`
@@ -36,7 +42,7 @@ const DescriptionContainer = styled.div`
 `
 
 const Title = styled.div`
-  margin: 32px 0 24px;
+  margin-bottom: 24px;
 `
 
 const Section = styled.div`
@@ -48,7 +54,7 @@ const Separator = styled.div`
   width: 100%;
 `
 
-const NavBar = (props) => {
+const PropertyView = (props) => {
   const renderDetails = () => {
     return (
       <Section>
@@ -77,14 +83,23 @@ const NavBar = (props) => {
       <ImageContainer>
         <ImageCarousel imageList={props.details.pictures} />
       </ImageContainer>
-      <Title>
-        <PropertyAddress details={props.details} />
-      </Title>
-      <Separator />
-      {renderDetails()}
-      <Separator />
-      {renderDescription()}
-      <RelatedPropertiesContainer />
+      <MainContent>
+        <WithRightSideBar
+          main={
+            <>
+              <Title>
+                <PropertyAddress details={props.details} />
+              </Title>
+              <Separator />
+              {renderDetails()}
+              <Separator />
+              {renderDescription()}
+              <RelatedPropertiesContainer />
+            </>
+          }
+          sidebar={<PropertyAgentInfo />}
+        />
+      </MainContent>
     </PageContainer>
   )
 }
@@ -95,10 +110,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-NavBar.propTypes = {
+PropertyView.propTypes = {
   details: PropertyDetailsType.isRequired,
 }
 
-NavBar.defaultProps = {}
+PropertyView.defaultProps = {}
 
-export default connect(mapStateToProps)(NavBar)
+export default connect(mapStateToProps)(PropertyView)

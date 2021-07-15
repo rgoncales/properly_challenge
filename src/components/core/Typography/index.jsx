@@ -12,6 +12,8 @@ const COLORS = {
 const SIZE = {
   LARGE: 'lg',
   DEFAULT: 'default',
+  MEDIUM: 'md',
+  MEDIUM2: 'md2',
   SMALL: 'sm',
 }
 
@@ -31,6 +33,10 @@ const Styled = styled.span`
     switch (props.size) {
       case SIZE.SMALL:
         return '14px'
+      case SIZE.MEDIUM:
+        return '18px'
+      case SIZE.MEDIUM2:
+        return '21px'
       case SIZE.LARGE:
         return '24px'
       case COLORS.DEFAULT:

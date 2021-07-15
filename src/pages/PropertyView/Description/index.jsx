@@ -4,14 +4,14 @@ import { PropertyDetailsType } from 'customTypes'
 import Typography from 'components/core/Typography'
 
 const Title = styled.div`
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 `
 
 const Description = (props) => {
   return (
     <>
       <Title>
-        <Typography color="dark" size="lg" weight="500">
+        <Typography color="dark" size="md2" weight="500">
           Description
         </Typography>
       </Title>
