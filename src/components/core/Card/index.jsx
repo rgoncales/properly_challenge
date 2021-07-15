@@ -10,7 +10,7 @@ const Card = (props) => {
     }
     return (
       <div className="card__title">
-        <Typography color="light" weight="600">
+        <Typography size="sm" color="light" weight="600">
           {props.title}
         </Typography>
       </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Card from 'components/core/Card'
-import Button from 'components/core/buttons/Button'
+import Button from 'components/core/buttons/CallToAction'
 import Typography from 'components/core/Typography'
 
 const agent_info = {
@@ -11,7 +11,6 @@ const agent_info = {
   email: 'mithrandir@iluvatar.me',
   profileImage:
     'https://static.wixstatic.com/media/065e6b_dd1a8624bd5b40c9848aeec671ed811b.png/v1/fit/w_936%2Ch_733%2Cal_c/file.png',
-  //'https://static.wikia.nocookie.net/lotr/images/e/e7/Gandalf_the_Grey.jpg/revision/latest/scale-to-width-down/952?cb=20121110131754',
 }
 
 const StickyCard = styled.div`
@@ -44,6 +43,14 @@ const Info = styled.div`
   margin: 4px 0;
 `
 
+const InfoContainer = styled.div`
+  margin: 16px 0;
+`
+
+const ButtonContainer = styled.div`
+  margin-top: 16px;
+`
+
 const AgentInfo = (props) => {
   const renderInfo = (info) => {
     return (
@@ -60,14 +67,18 @@ const AgentInfo = (props) => {
         <ImageContainer>
           <Image src={agent_info.profileImage} alt="gandalf_baby" />
         </ImageContainer>
-        <Info>
-          <Typography color="default" weight="600">
-            {agent_info.name}
-          </Typography>
-        </Info>
-        {renderInfo(agent_info.phone)}
-        {renderInfo(agent_info.email)}
-        <Button>Book A Viewing</Button>
+        <InfoContainer>
+          <Info>
+            <Typography color="default" weight="600">
+              {agent_info.name}
+            </Typography>
+          </Info>
+          {renderInfo(agent_info.phone)}
+          {renderInfo(agent_info.email)}
+        </InfoContainer>
+        <ButtonContainer>
+          <Button>Book A Viewing</Button>
+        </ButtonContainer>
       </Card>
     </StickyCard>
   )
