@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './index.css'
+import { Link } from 'react-router-dom'
+import './_index.scss'
 
 const NavBar = () => {
   const renderNode = (content) => {
@@ -9,7 +10,11 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <div className="navbar__inner">
-        {renderNode(<div className="navbar__logo">Property'R'Us</div>)}
+        {renderNode(
+          <Link to="/" className="navbar__logo">
+            Property'R'Us
+          </Link>,
+        )}
         {renderNode(<div className="navbar__profile"></div>)}
       </div>
     </div>

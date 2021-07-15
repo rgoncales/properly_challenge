@@ -2,6 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import 'App.css'
 import PropertyViewPage from 'pages/PropertyView'
+import PropertyListPage from 'pages/PropertyList'
 import styled from 'styled-components'
 import NavBar from 'components/NavBar'
 
@@ -14,7 +15,6 @@ const WithNavBar = styled.div`
 
 const NavBarContainer = styled.div`
   width: 100%;
-  height: 60px;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -38,6 +38,7 @@ function App() {
             path="/property/:propertyId"
             component={PropertyViewPage}
           />
+          <Route exact path="/" component={PropertyListPage} />
         </Switch>
       </BodyContainer>
     </WithNavBar>

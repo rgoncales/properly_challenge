@@ -1,12 +1,15 @@
-import { createStore, combineReducers } from 'redux'
-import property from 'redux/property/reducer'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import property from 'redux/propertyDetails/reducer'
+import propertyList from 'redux/propertyList/reducer'
+import thunk from 'redux-thunk'
 
 const combinedReducers = combineReducers({
   property,
+  propertyList,
 })
 
 const store = createStore(
   combinedReducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(thunk),
 )
 export default store
