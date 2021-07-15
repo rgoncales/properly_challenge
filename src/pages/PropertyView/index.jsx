@@ -25,6 +25,7 @@ const DetailsContainer = styled.div`
   width: 100%;
   flex: 1;
   display: flex;
+  flex-wrap: wrap;
 `
 
 const RelatedPropertiesContainer = styled.div`
