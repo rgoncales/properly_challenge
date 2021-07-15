@@ -1,3 +1,3 @@
 export const selectPropertyList = (state) => {
-  return state.propertyList.list
+  return Object.values(state.propertyList.list)
 }

@@ -7,12 +7,10 @@ export function getPropertyList() {
       type: TYPES.GET_PROPERTY_LIST,
     })
     try {
-      setTimeout(() => {
-        dispatch({
-          type: TYPES.GET_PROPERTY_LIST_SUCCESS,
-          payload: [...propertyData.list],
-        })
-      }, 2000)
+      dispatch({
+        type: TYPES.GET_PROPERTY_LIST_SUCCESS,
+        payload: [...propertyData.list],
+      })
     } catch (error) {
       dispatch({
         type: TYPES.GET_PROPERTY_LIST_FAILURE,
