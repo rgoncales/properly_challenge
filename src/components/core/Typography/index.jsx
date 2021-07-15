@@ -7,6 +7,7 @@ const COLORS = {
   LIGHT: 'light',
   DEFAULT: 'default',
   DARK: 'dark',
+  ACCENT: 'accent',
 }
 
 const SIZE = {
@@ -24,6 +25,8 @@ const Styled = styled.span`
         return '#696969'
       case COLORS.DARK:
         return '#333333'
+      case COLORS.ACCENT:
+        return '#b800ce'
       case COLORS.DEFAULT:
       default:
         return '#4f4f4f'

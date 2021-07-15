@@ -1,29 +1,32 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import styled from 'styled-components'
-import PageContainer from 'components/layout/PageContainer'
-import ImageCarousel from 'components/layout/ImageCarousel'
-import PropertyDetails from 'pages/PropertyView/Details'
-import PropertyPrice from 'pages/PropertyView/Price'
-import { selectPropertyDetails } from 'redux/property/selectors'
+import Typography from 'components/core/Typography'
 import { PropertyDetailsType } from 'customTypes'
-import Card from 'components/core/Card'
+import formatUtils from 'utils/format'
 
-const NavBar = (props) => {
-  return <Card>PRICE</Card>
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+`
+
+const Price = (props) => {
+  return (
+    <Wrapper>
+      <Typography size="lg" color="accent" weight="500">
+        {formatUtils.formatPrice(props.details.price)}
+      </Typography>
+    </Wrapper>
+  )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    details: selectPropertyDetails(state),
-  }
-}
-
-NavBar.propTypes = {
+Price.propTypes = {
   details: PropertyDetailsType.isRequired,
 }
 
-NavBar.defaultProps = {}
+Price.defaultProps = {}
 
-export default connect(mapStateToProps)(NavBar)
+export default Price

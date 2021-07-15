@@ -31,7 +31,6 @@ const Details = (props) => {
             label="Maintenance"
             value={formatUtils.formatPrice(details.maintenanceCost)}
           />
-          <Row label="Price" value={formatUtils.formatPrice(details.price)} />
           <Row
             label="List Date"
             value={formatUtils.exactDate(details.listedOn)}
