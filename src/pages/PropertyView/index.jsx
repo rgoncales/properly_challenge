@@ -9,7 +9,7 @@ import PropertyPrice from 'pages/PropertyView/Price'
 import PropertyDescription from 'pages/PropertyView/Description'
 import PropertyAddress from 'pages/PropertyView/Address'
 import PropertyAgentInfo from 'pages/PropertyView/AgentInfo'
-import { selectPropertyDetails } from 'redux/property/selectors'
+import { selectPropertyDetails } from 'redux/propertyDetails/selectors'
 import { PropertyDetailsType } from 'customTypes'
 import WithRightSideBar from 'components/layout/WithRightSideBar'
 

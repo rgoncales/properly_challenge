@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Card from 'components/core/Card'
+import CardContent from 'components/core/Card/Content'
 import Button from 'components/core/buttons/CallToAction'
 import Typography from 'components/core/Typography'
 
@@ -64,21 +65,23 @@ const AgentInfo = (props) => {
   return (
     <StickyCard>
       <Card title="Agent Information">
-        <ImageContainer>
-          <Image src={agent_info.profileImage} alt="gandalf_baby" />
-        </ImageContainer>
-        <InfoContainer>
-          <Info>
-            <Typography color="default" weight="600">
-              {agent_info.name}
-            </Typography>
-          </Info>
-          {renderInfo(agent_info.phone)}
-          {renderInfo(agent_info.email)}
-        </InfoContainer>
-        <ButtonContainer>
-          <Button>Book A Viewing</Button>
-        </ButtonContainer>
+        <CardContent>
+          <ImageContainer>
+            <Image src={agent_info.profileImage} alt="gandalf_baby" />
+          </ImageContainer>
+          <InfoContainer>
+            <Info>
+              <Typography color="default" weight="600">
+                {agent_info.name}
+              </Typography>
+            </Info>
+            {renderInfo(agent_info.phone)}
+            {renderInfo(agent_info.email)}
+          </InfoContainer>
+          <ButtonContainer>
+            <Button>Book A Viewing</Button>
+          </ButtonContainer>
+        </CardContent>
       </Card>
     </StickyCard>
   )

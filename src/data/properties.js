@@ -1,4 +1,5 @@
 const p1 = {
+  _id: 'p1_zxczxczxc',
   price: 500000,
   address: '123 Elm St.',
   city: 'Toronto',
@@ -44,6 +45,7 @@ const p1 = {
 }
 
 const p2 = {
+  _id: 'p2_zxczxczxc',
   price: 500000,
   address: '123 Elm St.',
   city: 'Toronto',
@@ -89,6 +91,7 @@ const p2 = {
 }
 
 const p3 = {
+  _id: 'p3_zxczxczxc',
   price: 500000,
   address: '123 Elm St.',
   city: 'Toronto',
@@ -134,6 +137,7 @@ const p3 = {
 }
 
 const p4 = {
+  _id: 'p4_zxczxczxc',
   price: 500000,
   address: '123 Elm St.',
   city: 'Toronto',

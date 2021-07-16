@@ -7,9 +7,14 @@ export function getPropertyList() {
       type: TYPES.GET_PROPERTY_LIST,
     })
     try {
+      // pretend this is a server response
+      const map = propertyData.list.reduce((acc, property) => {
+        acc[property._id] = { ...property }
+        return acc
+      }, {})
       dispatch({
         type: TYPES.GET_PROPERTY_LIST_SUCCESS,
-        payload: [...propertyData.list],
+        payload: map,
       })
     } catch (error) {
       dispatch({

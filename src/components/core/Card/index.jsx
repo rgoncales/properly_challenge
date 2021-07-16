@@ -4,6 +4,11 @@ import Typography from 'components/core/Typography'
 import './_index.scss'
 
 const Card = (props) => {
+  const handleClick = () => {
+    if (props.onClick) {
+      props.onClick()
+    }
+  }
   const renderTitle = () => {
     if (!props.title) {
       return null
@@ -17,15 +22,21 @@ const Card = (props) => {
     )
   }
   return (
-    <div className="card">
+    <div className="card" onClick={handleClick}>
       {renderTitle()}
-      <div className="card__body">{props.children}</div>
+      {props.children}
     </div>
   )
 }
 
-Card.propTypes = {}
+Card.propTypes = {
+  onClick: PropTypes.func,
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string,
+}
 
-Card.defaultProps = {}
+Card.defaultProps = {
+  title: '',
+}
 
 export default Card
