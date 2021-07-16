@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
+import { getPropertyById } from 'redux/propertyDetails/action'
 import PageContainer from 'components/layout/PageContainer'
 import ImageCarousel from 'components/layout/ImageCarousel'
 import PropertyDetails from 'pages/PropertyView/Details'
@@ -56,6 +57,10 @@ const Separator = styled.div`
 `
 
 const PropertyView = (props) => {
+  useEffect(() => {
+    props.getPropertyById({ propertyId: props.match.params.propertyId })
+  }, [])
+
   const renderDetails = () => {
     return (
       <Section>
@@ -117,4 +122,4 @@ PropertyView.propTypes = {
 
 PropertyView.defaultProps = {}
 
-export default connect(mapStateToProps)(PropertyView)
+export default connect(mapStateToProps, { getPropertyById })(PropertyView)

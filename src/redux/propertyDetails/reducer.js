@@ -8,7 +8,7 @@ const initialState = {
 
 function propertyDetails(state = initialState, action) {
   switch (action.type) {
-    case TYPES.SET_PROPERTY:
+    case TYPES.GET_PROPERTY_SUCCESS:
       return {
         ...action.payload,
       }
