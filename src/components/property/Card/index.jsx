@@ -21,7 +21,7 @@ const Image = styled.img`
 const FooterInfo = styled.div`
   padding: 16px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 `
 
@@ -39,7 +39,7 @@ const PropertyCard = (props) => {
         <Typography color="default" size="default" weight="500">
           {props.property.address}
         </Typography>
-        <Typography color="dark" size="default" weight="500">
+        <Typography color="dark" size="md" weight="500">
           {formatUtils.formatPrice(props.property.price)}
         </Typography>
       </FooterInfo>

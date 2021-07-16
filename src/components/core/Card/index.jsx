@@ -1,7 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Typography from 'components/core/Typography'
-import './_index.scss'
+import styled from 'styled-components'
+
+const StyledCard = styled.div`
+  border-radius: 5px;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  cursor: ${(props) => (props.isClickable ? 'pointer' : 'default')};
+`
+
+const Title = styled.div`
+  padding: 16px 16px 8px;
+  word-break: break-word;
+`
 
 const Card = (props) => {
   const handleClick = () => {
@@ -14,18 +29,18 @@ const Card = (props) => {
       return null
     }
     return (
-      <div className="card__title">
+      <Title>
         <Typography size="sm" color="light" weight="600">
           {props.title}
         </Typography>
-      </div>
+      </Title>
     )
   }
   return (
-    <div className="card" onClick={handleClick}>
+    <StyledCard isClickable={!!props.onClick} onClick={handleClick}>
       {renderTitle()}
       {props.children}
-    </div>
+    </StyledCard>
   )
 }
 
@@ -36,6 +51,7 @@ Card.propTypes = {
 }
 
 Card.defaultProps = {
+  onClick: null,
   title: '',
 }
 
