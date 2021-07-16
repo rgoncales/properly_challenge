@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { getPropertyList } from 'redux/propertyList/action'
 import { selectPropertyList } from 'redux/propertyList/selectors'
 import PageContainer from 'components/layout/PageContainer'
+import WithSideMenu from 'components/layout/WithSideMenu'
 import PropertyCard from 'components/property/Card'
 
 const List = styled.div`
@@ -35,8 +36,15 @@ const PropertyView = (props) => {
 
   return (
     <PageContainer>
-      <div onClick={() => console.log(props.propertyList)}>test</div>
-      {renderList()}
+      <WithSideMenu
+        menu={<div>menu goes here</div>}
+        content={
+          <>
+            <div onClick={() => console.log(props.propertyList)}>test</div>
+            {renderList()}
+          </>
+        }
+      />
     </PageContainer>
   )
 }
