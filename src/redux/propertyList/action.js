@@ -1,4 +1,5 @@
 import propertyData from 'data/properties'
+import { FILTERS } from 'redux/propertyList/constants'
 import TYPES from './types'
 
 export function getPropertyList() {
@@ -26,5 +27,13 @@ export function getPropertyList() {
 }
 
 export function setListFilters(filters) {
-  return { type: TYPES.SET_FILTERS, payload: filters }
+  return { type: TYPES.SET_ALL_FILTERS, payload: filters }
+}
+
+export function setBathroomFilter(value) {
+  return { type: TYPES.SET_FILTER, payload: { [FILTERS.BATHROOM]: value } }
+}
+
+export function setBedroomFilter(value) {
+  return { type: TYPES.SET_FILTER, payload: { [FILTERS.BEDROOM]: value } }
 }

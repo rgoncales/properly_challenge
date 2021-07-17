@@ -11,7 +11,6 @@ const Wrapper = styled.div`
 const Menu = styled.div`
   padding: $padding-size-lg $padding-size-sm $padding-size-x-lg;
   width: 280px;
-  box-shadow: 1px -1px 2px 0 rgba(0, 0, 0, 0.1);
 `
 const Content = styled.div`
   flex: 1;

@@ -2,7 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import AutoComplete from 'components/input/AutoComplete'
-import { setListFilters } from 'redux/propertyList/action'
+import {
+  setListFilters,
+  setBathroomFilter,
+  setBedroomFilter,
+} from 'redux/propertyList/action'
 
 const OPTIONS = {
   bathroomCount: ['1', '2', '3', '4', '5'],
@@ -10,17 +14,12 @@ const OPTIONS = {
 }
 
 const FilterMenu = (props) => {
-  const getCurrentFilters = (newFilter) => {
-    return { ...props.selectedFilters, ...newFilter }
-  }
-
-  const onChangeFilter = (name, value) => {
+  const formatValue = (value) => {
     let intValue = value
     if (intValue !== null && typeof value === 'string') {
       intValue = parseInt(intValue)
     }
-    const filters = getCurrentFilters({ [name]: intValue })
-    props.setListFilters(filters)
+    return intValue
   }
 
   return (
@@ -29,12 +28,12 @@ const FilterMenu = (props) => {
       <AutoComplete
         options={OPTIONS.bathroomCount}
         label="Bathrooms"
-        onChange={(value) => onChangeFilter('bathroomCount', value)}
+        onChange={(value) => props.setBathroomFilter(formatValue(value))}
       />
       <AutoComplete
         options={OPTIONS.bedroomCount}
         label="Bedrooms"
-        onChange={(value) => onChangeFilter('bedroomCount', value)}
+        onChange={(value) => props.setBedroomFilter(formatValue(value))}
       />
     </div>
   )
@@ -50,4 +49,8 @@ FilterMenu.propTypes = {}
 
 FilterMenu.defaultProps = {}
 
-export default connect(mapStateToProps, { setListFilters })(FilterMenu)
+export default connect(mapStateToProps, {
+  setListFilters,
+  setBedroomFilter,
+  setBathroomFilter,
+})(FilterMenu)

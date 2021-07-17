@@ -1,7 +1,4 @@
-const FILTERS = {
-  BEDROOM: 'bedroomCount',
-  BATHROOM: 'bathroomCount',
-}
+import { FILTERS } from 'redux/propertyList/constants'
 
 class FilterItemList {
   constructor(itemList, filter) {
