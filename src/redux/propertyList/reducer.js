@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 import TYPES from './types'
 
-const initialState = []
+const initialList = []
 
-function listReducer(state = initialState, action) {
+function listReducer(state = initialList, action) {
   switch (action.type) {
     case TYPES.GET_PROPERTY_LIST_SUCCESS:
       return {
@@ -14,6 +14,26 @@ function listReducer(state = initialState, action) {
   }
 }
 
+const initialFilters = {
+  bathroomCount: null,
+  bedroomCount: null,
+  minPrice: null,
+  maxPrice: null,
+  minSqft: null,
+}
+
+function selectedFiltersReducer(state = initialFilters, action) {
+  switch (action.type) {
+    case TYPES.SET_FILTERS:
+      return {
+        ...action.payload,
+      }
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   list: listReducer,
+  filters: selectedFiltersReducer,
 })

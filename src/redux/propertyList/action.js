@@ -24,3 +24,7 @@ export function getPropertyList() {
     }
   }
 }
+
+export function setListFilters(filters) {
+  return { type: TYPES.SET_FILTERS, payload: filters }
+}

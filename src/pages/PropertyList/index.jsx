@@ -3,10 +3,11 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { getPropertyList } from 'redux/propertyList/action'
-import { selectPropertyList } from 'redux/propertyList/selectors'
+import { selectFilteredPropertyList } from 'redux/propertyList/selectors'
 import PageContainer from 'components/layout/PageContainer'
 import WithSideMenu from 'components/layout/WithSideMenu'
 import PropertyCard from 'components/property/Card'
+import FilterMenu from 'pages/PropertyList/FilterMenu'
 
 const List = styled.div`
   display: grid;
@@ -37,7 +38,7 @@ const PropertyView = (props) => {
   return (
     <PageContainer>
       <WithSideMenu
-        menu={<div>menu goes here</div>}
+        menu={<FilterMenu />}
         content={
           <>
             <div onClick={() => console.log(props.propertyList)}>test</div>
@@ -51,7 +52,7 @@ const PropertyView = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    propertyList: selectPropertyList(state),
+    propertyList: selectFilteredPropertyList(state),
   }
 }
 
