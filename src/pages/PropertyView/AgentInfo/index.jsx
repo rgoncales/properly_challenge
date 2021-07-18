@@ -5,14 +5,7 @@ import Card from 'components/core/Card'
 import CardContent from 'components/core/Card/Content'
 import Button from 'components/core/buttons/CallToAction'
 import Typography from 'components/core/Typography'
-
-const agent_info = {
-  name: 'Gandalf The Grey',
-  phone: '(647) 123-4567',
-  email: 'mithrandir@iluvatar.me',
-  profileImage:
-    'https://static.wixstatic.com/media/065e6b_dd1a8624bd5b40c9848aeec671ed811b.png/v1/fit/w_936%2Ch_733%2Cal_c/file.png',
-}
+import { agent_1 } from 'data/agents'
 
 const StickyCard = styled.div`
   position: sticky !important;
@@ -52,7 +45,7 @@ const ButtonContainer = styled.div`
   margin-top: 16px;
 `
 
-const AgentInfo = (props) => {
+const AgentInfo = () => {
   const renderInfo = (info) => {
     return (
       <Info>
@@ -67,19 +60,21 @@ const AgentInfo = (props) => {
       <Card title="Agent Information">
         <CardContent>
           <ImageContainer>
-            <Image src={agent_info.profileImage} alt="gandalf_baby" />
+            <Image src={agent_1.profileImage} alt="gandalf_baby" />
           </ImageContainer>
           <InfoContainer>
             <Info>
               <Typography color="default" weight="600">
-                {agent_info.name}
+                {agent_1.name}
               </Typography>
             </Info>
-            {renderInfo(agent_info.phone)}
-            {renderInfo(agent_info.email)}
+            {renderInfo(agent_1.phone)}
+            {renderInfo(agent_1.email)}
           </InfoContainer>
           <ButtonContainer>
-            <Button>Book A Viewing</Button>
+            <Button onClick={() => alert('Yay! Meeting booked.')}>
+              Book A Viewing
+            </Button>
           </ButtonContainer>
         </CardContent>
       </Card>

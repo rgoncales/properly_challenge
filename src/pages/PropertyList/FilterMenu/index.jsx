@@ -15,7 +15,7 @@ import Field from 'components/core/form/Field'
 import SideBySideFields from 'components/core/form/SideBySideFields'
 import Card from 'components/core/Card'
 import CardContent from 'components/core/Card/Content'
-import Accordion from 'components/core/Accordion'
+import CollapsibleContent from 'components/core/CollapsibleContent'
 import Typography from 'components/core/Typography'
 
 const OPTIONS = {
@@ -104,14 +104,15 @@ const FilterMenu = (props) => {
 
   return (
     <Card>
-      <Accordion
+      <CollapsibleContent
         title={
           <Typography size="md" color="light" weight="600">
             Filters
           </Typography>
         }
         content={renderFilters()}
-      ></Accordion>
+        defaultExpanded
+      />
     </Card>
   )
 }

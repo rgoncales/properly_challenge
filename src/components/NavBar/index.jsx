@@ -30,6 +30,7 @@ const NavBar = () => {
             className="navbar__profile"
             src={PROFILE_PIC}
             alt="profile-img"
+            onClick={() => alert('Profile management')}
           ></img>
         </NavNode>
       </div>

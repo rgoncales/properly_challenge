@@ -29,11 +29,12 @@ const StyledButton = styled.button`
 `
 
 const Button = (props) => {
-  return <StyledButton>{props.children}</StyledButton>
+  return <StyledButton onClick={props.onClick}>{props.children}</StyledButton>
 }
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired,
 }
 
 Button.defaultProps = {}

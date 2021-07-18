@@ -1,11 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { withStyles, makeStyles } from '@material-ui/core/styles'
 import Accordion from '@material-ui/core/Accordion'
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     width: '100%',
   },
@@ -33,12 +34,12 @@ const AccordionSummary = withStyles({
   expanded: {},
 })(MuiAccordionSummary)
 
-export default function SimpleAccordion(props) {
+const CollapsibleContent = (props) => {
   const classes = useStyles()
 
   return (
     <div className={classes.root}>
-      <Accordion>
+      <Accordion defaultExpanded={props.defaultExpanded}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -53,3 +54,15 @@ export default function SimpleAccordion(props) {
     </div>
   )
 }
+
+CollapsibleContent.propTypes = {
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  content: PropTypes.node,
+  defaultExpanded: PropTypes.bool,
+}
+
+CollapsibleContent.defaultProps = {
+  defaultExpanded: false,
+}
+
+export default CollapsibleContent
