@@ -3,7 +3,14 @@ import PropTypes from 'prop-types'
 import TextField from '@material-ui/core/TextField'
 
 const TextInput = (props) => {
-  return <TextField {...props} label={props.label} variant="outlined" />
+  return (
+    <TextField
+      {...props}
+      placeholder={props.placeholder}
+      label={props.label}
+      variant="outlined"
+    />
+  )
 }
 
 TextInput.propTypes = {
@@ -11,7 +18,7 @@ TextInput.propTypes = {
 }
 
 TextInput.defaultProps = {
-  label: 'NO_LABEL',
+  label: null,
 }
 
 export default TextInput

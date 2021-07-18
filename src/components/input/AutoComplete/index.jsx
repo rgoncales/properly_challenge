@@ -13,7 +13,11 @@ const AutoCompleteInput = (props) => {
       options={props.options}
       onChange={onChange}
       renderInput={(params) => (
-        <TextInput {...params} label={props.label} variant="outlined" />
+        <TextInput
+          {...params}
+          placeholder={props.placeholder}
+          variant="outlined"
+        />
       )}
     />
   )

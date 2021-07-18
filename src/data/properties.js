@@ -35,13 +35,13 @@ const p1 = {
     'https://apilgriminnarnia.files.wordpress.com/2012/12/bag-end-inside-hobbit.jpg',
     'https://i.pinimg.com/originals/f7/ca/8e/f7ca8ebdb7ae3e114f000e00f8a1c85f.jpg',
   ],
-  priceHistory: [
-    {
-      price: 300000,
-      soldOn: new Date(),
-      listedOn: new Date(),
-    },
-  ],
+  //priceHistory: [
+  //  {
+  //    price: 300000,
+  //    soldOn: new Date(),
+  //    listedOn: new Date(),
+  //  },
+  //],
 }
 
 const p2 = {
@@ -80,13 +80,6 @@ const p2 = {
     'https://media.fromthegrapevine.com/assets/images/2015/3/hobbit-house.jpg.480x0_q71_crop-scale.jpg',
     'https://apilgriminnarnia.files.wordpress.com/2012/12/bag-end-inside-hobbit.jpg',
     'https://i.pinimg.com/originals/f7/ca/8e/f7ca8ebdb7ae3e114f000e00f8a1c85f.jpg',
-  ],
-  priceHistory: [
-    {
-      price: 300000,
-      soldOn: new Date(),
-      listedOn: new Date(),
-    },
   ],
 }
 
@@ -127,13 +120,6 @@ const p3 = {
     'https://apilgriminnarnia.files.wordpress.com/2012/12/bag-end-inside-hobbit.jpg',
     'https://i.pinimg.com/originals/f7/ca/8e/f7ca8ebdb7ae3e114f000e00f8a1c85f.jpg',
   ],
-  priceHistory: [
-    {
-      price: 300000,
-      soldOn: new Date(),
-      listedOn: new Date(),
-    },
-  ],
 }
 
 const p4 = {
@@ -172,13 +158,6 @@ const p4 = {
     'https://media.fromthegrapevine.com/assets/images/2015/3/hobbit-house.jpg.480x0_q71_crop-scale.jpg',
     'https://apilgriminnarnia.files.wordpress.com/2012/12/bag-end-inside-hobbit.jpg',
     'https://i.pinimg.com/originals/f7/ca/8e/f7ca8ebdb7ae3e114f000e00f8a1c85f.jpg',
-  ],
-  priceHistory: [
-    {
-      price: 300000,
-      soldOn: new Date(),
-      listedOn: new Date(),
-    },
   ],
 }
 

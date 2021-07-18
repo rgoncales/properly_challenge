@@ -8,7 +8,7 @@ const StyledCard = styled.div`
   position: relative;
   background-color: #fff;
   overflow: hidden;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   height: 100%;
   cursor: ${(props) => (props.isClickable ? 'pointer' : 'default')};
 `

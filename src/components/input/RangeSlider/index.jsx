@@ -2,26 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 import Slider from '@material-ui/core/Slider'
+import styled from 'styled-components'
 
-const useStyles = makeStyles({
-  root: {
-    width: '100%',
-  },
-})
+const Wrapper = styled.div`
+  padding: 0 8px;
+`
 
 function valuetext(value) {
   return `$${value}`
 }
 
 const RangeSlider = (props) => {
-  const classes = useStyles()
-
   const handleChange = (event, newValue) => {
     props.onChange(newValue)
   }
 
   return (
-    <div className={classes.root}>
+    <Wrapper>
       <Slider
         value={props.value}
         onChange={handleChange}
@@ -32,7 +29,7 @@ const RangeSlider = (props) => {
         max={props.max}
         step={props.step}
       />
-    </div>
+    </Wrapper>
   )
 }
 
