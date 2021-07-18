@@ -10,6 +10,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "classnames": "^2.3.1",
+    "husky": "^7.0.1",
     "moment": "^2.29.1",
     "node-sass": "^6.0.1",
     "prop-types": "^15.7.2",
@@ -28,6 +29,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test",
+      "pre-commit": "npm test"
+    }
   },
   "eslintConfig": {
     "extends": [

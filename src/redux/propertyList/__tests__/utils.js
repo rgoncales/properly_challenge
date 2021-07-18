@@ -111,6 +111,6 @@ describe('filter property list', () => {
       [FILTERS.MAX_FOOTAGE]: 1100,
     }
     const filteredList = new utils.FilterItemList(list, filter)
-    expect(filteredList.length).toBe(1)
+    expect(filteredList.length).toBe(0)
   })
 })
