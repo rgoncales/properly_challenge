@@ -73,4 +73,44 @@ describe('filter property list', () => {
     const filteredList = new utils.FilterItemList(list, filter)
     expect(filteredList.length).toBe(1)
   })
+  it('should only return if matches all criteria', () => {
+    const list = [
+      new factory.Property('1')
+        .hasBedrooms(2)
+        .hasBathrooms(2)
+        .hasPrice(1000)
+        .hasSize(1000),
+      new factory.Property('2')
+        .hasBedrooms(2)
+        .hasBathrooms(2)
+        .hasPrice(1000)
+        .hasSize(2000),
+      new factory.Property('3')
+        .hasBedrooms(2)
+        .hasBathrooms(2)
+        .hasPrice(700)
+        .hasSize(1000),
+      new factory.Property('4')
+        .hasBedrooms(2)
+        .hasBathrooms(3)
+        .hasPrice(1000)
+        .hasSize(1000),
+      new factory.Property('5')
+        .hasBedrooms(1)
+        .hasBathrooms(2)
+        .hasPrice(1000)
+        .hasSize(1000),
+    ]
+    const filter = {
+      ...default_filter,
+      [FILTERS.BEDROOM]: 2,
+      [FILTERS.BATHROOM]: 2,
+      [FILTERS.MIN_PRICE]: 900,
+      [FILTERS.MAX_PRICE]: 1100,
+      [FILTERS.MIN_FOOTAGE]: 900,
+      [FILTERS.MAX_FOOTAGE]: 1100,
+    }
+    const filteredList = new utils.FilterItemList(list, filter)
+    expect(filteredList.length).toBe(1)
+  })
 })
