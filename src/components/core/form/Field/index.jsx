@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Typography from 'components/core/Typography'
 
 const FieldWrapper = styled.div`
-  padding-top: 16px;
+  padding-top: 24px;
 `
 const FieldTitle = styled.div`
   margin-bottom: 4px;

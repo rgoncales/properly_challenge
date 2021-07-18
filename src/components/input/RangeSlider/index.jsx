@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { withStyles } from '@material-ui/core/styles'
 import Slider from '@material-ui/core/Slider'
 import Typography from 'components/core/Typography'
 import formatUtils from 'utils/format'
@@ -29,6 +30,12 @@ const TYPES = {
   DEFAULT: 'default',
 }
 
+const StyledSlider = withStyles({
+  root: {
+    color: '#b044bd',
+  },
+})(Slider)
+
 const RangeSlider = (props) => {
   const handleChange = (event, newValue) => {
     props.onChange(newValue)
@@ -52,7 +59,7 @@ const RangeSlider = (props) => {
         </Typography>
       </ValueDisplay>
       <InputWrapper>
-        <Slider
+        <StyledSlider
           value={props.value}
           onChange={handleChange}
           ara-labelledby="range-slider"
