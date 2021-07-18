@@ -41,7 +41,7 @@ const FilterMenu = (props) => {
             <Field label="Bedrooms">
               <AutoComplete
                 options={OPTIONS.bedroomCount}
-                placeholder="N/A"
+                placeholder="Any"
                 onChange={(value) => props.setBedroomFilter(formatValue(value))}
               />
             </Field>
@@ -50,7 +50,7 @@ const FilterMenu = (props) => {
             <Field label="Bathrooms">
               <AutoComplete
                 options={OPTIONS.bathroomCount}
-                placeholder="N/A"
+                placeholder="Any"
                 onChange={(value) =>
                   props.setBathroomFilter(formatValue(value))
                 }
@@ -69,6 +69,7 @@ const FilterMenu = (props) => {
                   props.selectedFilters.maxPrice,
                 ]}
                 marks
+                type="price"
                 onChange={(value) => {
                   props.setPriceRangeFilter({ min: value[0], max: value[1] })
                 }}

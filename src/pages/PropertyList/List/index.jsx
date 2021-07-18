@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { getPropertyList } from 'redux/propertyList/action'
 import { selectFilteredPropertyList } from 'redux/propertyList/selectors'
 import PropertyCard from 'components/property/Card'
+import EmptyPlaceholder from 'pages/PropertyList/List/EmptyPlaceholder'
 
 const List = styled.div`
   display: grid;
@@ -16,7 +17,7 @@ const List = styled.div`
 
 const PropertyList = (props) => {
   if (!props.propertyList.length) {
-    return null
+    return <EmptyPlaceholder />
   }
   return (
     <List>
