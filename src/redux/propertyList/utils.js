@@ -17,6 +17,7 @@ class FilterItemList {
       list = this.bathrooms(list)
     }
     list = this.price(list)
+    list = this.footage(list)
     return list
   }
 
@@ -37,6 +38,15 @@ class FilterItemList {
       return (
         item.price >= this.filter[FILTERS.MIN_PRICE] &&
         item.price <= this.filter[FILTERS.MAX_PRICE]
+      )
+    })
+  }
+
+  footage(list) {
+    return list.filter((item) => {
+      return (
+        item.size >= this.filter[FILTERS.MIN_FOOTAGE] &&
+        item.size <= this.filter[FILTERS.MAX_FOOTAGE]
       )
     })
   }

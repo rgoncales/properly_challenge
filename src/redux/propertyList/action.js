@@ -47,3 +47,12 @@ export function setPriceRangeFilter({ min, max }) {
     },
   }
 }
+export function setFootageRangeFilter({ min, max }) {
+  return {
+    type: TYPES.SET_FILTER,
+    payload: {
+      [FILTERS.MIN_FOOTAGE]: min,
+      [FILTERS.MAX_FOOTAGE]: max,
+    },
+  }
+}

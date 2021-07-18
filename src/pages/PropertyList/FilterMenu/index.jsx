@@ -9,11 +9,16 @@ import {
   setBathroomFilter,
   setBedroomFilter,
   setPriceRangeFilter,
+  setFootageRangeFilter,
 } from 'redux/propertyList/action'
 
 const OPTIONS = {
   bathroomCount: ['1', '2', '3', '4', '5'],
   bedroomCount: ['1', '2', '3', '4'],
+  maxPrice: 1000000,
+  priceStep: 50000,
+  maxFootage: 4000,
+  footageStep: 50,
 }
 
 const FilterMenu = (props) => {
@@ -39,12 +44,23 @@ const FilterMenu = (props) => {
         onChange={(value) => props.setBedroomFilter(formatValue(value))}
       />
       <RangeSlider
-        max={1000000}
-        step={50000}
+        max={OPTIONS.maxPrice}
+        step={OPTIONS.priceStep}
         value={[props.selectedFilters.minPrice, props.selectedFilters.maxPrice]}
+        marks
         onChange={(value) => {
-          console.log(value)
           props.setPriceRangeFilter({ min: value[0], max: value[1] })
+        }}
+      />
+      <RangeSlider
+        max={OPTIONS.maxFootage}
+        step={OPTIONS.footageStep}
+        value={[
+          props.selectedFilters.minFootage,
+          props.selectedFilters.maxFootage,
+        ]}
+        onChange={(value) => {
+          props.setFootageRangeFilter({ min: value[0], max: value[1] })
         }}
       />
     </div>
@@ -66,4 +82,5 @@ export default connect(mapStateToProps, {
   setBedroomFilter,
   setBathroomFilter,
   setPriceRangeFilter,
+  setFootageRangeFilter,
 })(FilterMenu)

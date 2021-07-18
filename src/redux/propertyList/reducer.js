@@ -20,7 +20,8 @@ const initialFilters = {
   [FILTERS.BEDROOM]: null,
   [FILTERS.MIN_PRICE]: 0,
   [FILTERS.MAX_PRICE]: 1000000,
-  minSqft: null,
+  [FILTERS.MIN_FOOTAGE]: 0,
+  [FILTERS.MAX_FOOTAGE]: 4000,
 }
 
 function selectedFiltersReducer(state = initialFilters, action) {

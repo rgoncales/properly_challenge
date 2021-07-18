@@ -27,7 +27,7 @@ const RangeSlider = (props) => {
         onChange={handleChange}
         ara-labelledby="range-slider"
         valueLabelDisplay="off"
-        marks
+        marks={props.marks}
         getAriaValueText={valuetext}
         max={props.max}
         step={props.step}
