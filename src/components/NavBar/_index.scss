@@ -19,18 +19,16 @@
   display: flex;
 }
 
-.navbar__node:hover {
-  cursor: pointer;
-}
-
 .navbar__logo {
   font-weight: 700;
   color: #b800ce;
   font-size: 24px;
   text-decoration: none;
 }
+
 .navbar__logo:hover {
   color: darken(#b800ce, 3%);
+  cursor: pointer;
 }
 
 .navbar__profile {
@@ -39,4 +37,8 @@
   border-radius: 50%;
   border: 2px solid #d6bbd6;
   object-fit: cover;
+}
+
+.navbar__profile:hover {
+  cursor: pointer;
 }
