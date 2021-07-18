@@ -18,8 +18,8 @@ function listReducer(state = initialList, action) {
 const initialFilters = {
   [FILTERS.BATHROOM]: null,
   [FILTERS.BEDROOM]: null,
-  [FILTERS.MIN_PRICE]: null,
-  maxPrice: null,
+  [FILTERS.MIN_PRICE]: 0,
+  [FILTERS.MAX_PRICE]: 1000000,
   minSqft: null,
 }
 

@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import formatUtils from 'utils/format'
 import AutoComplete from 'components/input/AutoComplete'
+import RangeSlider from 'components/input/RangeSlider'
 import {
   setListFilters,
   setBathroomFilter,
   setBedroomFilter,
+  setPriceRangeFilter,
 } from 'redux/propertyList/action'
 
 const OPTIONS = {
@@ -35,6 +38,15 @@ const FilterMenu = (props) => {
         label="Bedrooms"
         onChange={(value) => props.setBedroomFilter(formatValue(value))}
       />
+      <RangeSlider
+        max={1000000}
+        step={50000}
+        value={[props.selectedFilters.minPrice, props.selectedFilters.maxPrice]}
+        onChange={(value) => {
+          console.log(value)
+          props.setPriceRangeFilter({ min: value[0], max: value[1] })
+        }}
+      />
     </div>
   )
 }
@@ -53,4 +65,5 @@ export default connect(mapStateToProps, {
   setListFilters,
   setBedroomFilter,
   setBathroomFilter,
+  setPriceRangeFilter,
 })(FilterMenu)

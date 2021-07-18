@@ -37,3 +37,13 @@ export function setBathroomFilter(value) {
 export function setBedroomFilter(value) {
   return { type: TYPES.SET_FILTER, payload: { [FILTERS.BEDROOM]: value } }
 }
+
+export function setPriceRangeFilter({ min, max }) {
+  return {
+    type: TYPES.SET_FILTER,
+    payload: {
+      [FILTERS.MIN_PRICE]: min,
+      [FILTERS.MAX_PRICE]: max,
+    },
+  }
+}

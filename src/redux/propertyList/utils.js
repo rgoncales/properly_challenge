@@ -16,6 +16,7 @@ class FilterItemList {
     if (this.filter[FILTERS.BATHROOM] !== null) {
       list = this.bathrooms(list)
     }
+    list = this.price(list)
     return list
   }
 
@@ -28,6 +29,15 @@ class FilterItemList {
   bathrooms(list) {
     return list.filter((item) => {
       return item.numOfBathrooms === this.filter[FILTERS.BATHROOM]
+    })
+  }
+
+  price(list) {
+    return list.filter((item) => {
+      return (
+        item.price >= this.filter[FILTERS.MIN_PRICE] &&
+        item.price <= this.filter[FILTERS.MAX_PRICE]
+      )
     })
   }
 }
