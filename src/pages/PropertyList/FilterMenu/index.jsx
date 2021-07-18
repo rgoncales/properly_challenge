@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
 import AutoComplete from 'components/input/AutoComplete'
 import RangeSlider from 'components/input/RangeSlider'
 import {
@@ -14,6 +15,8 @@ import Field from 'components/core/form/Field'
 import SideBySideFields from 'components/core/form/SideBySideFields'
 import Card from 'components/core/Card'
 import CardContent from 'components/core/Card/Content'
+import Accordion from 'components/core/Accordion'
+import Typography from 'components/core/Typography'
 
 const OPTIONS = {
   bathroomCount: ['1', '2', '3', '4', '5'],
@@ -33,8 +36,8 @@ const FilterMenu = (props) => {
     return intValue
   }
 
-  return (
-    <Card title="Filters">
+  const renderFilters = () => {
+    return (
       <CardContent>
         <SideBySideFields
           left={
@@ -86,13 +89,29 @@ const FilterMenu = (props) => {
                   props.selectedFilters.maxFootage,
                 ]}
                 onChange={(value) => {
-                  props.setFootageRangeFilter({ min: value[0], max: value[1] })
+                  props.setFootageRangeFilter({
+                    min: value[0],
+                    max: value[1],
+                  })
                 }}
               />
             </Field>
           }
         />
       </CardContent>
+    )
+  }
+
+  return (
+    <Card>
+      <Accordion
+        title={
+          <Typography size="md" color="light" weight="600">
+            Filters
+          </Typography>
+        }
+        content={renderFilters()}
+      ></Accordion>
     </Card>
   )
 }
