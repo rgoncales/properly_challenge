@@ -29,7 +29,6 @@ Navigate to `localhost:3000/`
   - wrapped them in my own components so I can start building a component library.
 - Unit testing covers utils.
   - mainly focused on filtering util.
-- Every component I used, was actually made into a component.
 - Tried to stick to atomic design to separate pages and components. 
 - Redux was built with re-ducks structure, and dispatches mock actions to retrieve data.
 
