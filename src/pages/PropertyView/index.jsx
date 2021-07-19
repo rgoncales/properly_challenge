@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { getPropertyById } from 'redux/propertyDetails/action'
@@ -13,6 +12,7 @@ import PropertyAgentInfo from 'pages/PropertyView/AgentInfo'
 import { selectPropertyDetails } from 'redux/propertyDetails/selectors'
 import { PropertyDetailsType } from 'customTypes'
 import WithRightSideBar from 'components/layout/WithRightSideBar'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 const ImageContainer = styled.div`
   width: 100%;
@@ -40,7 +40,7 @@ const DetailsItem = styled.div`
 
 const DescriptionContainer = styled.div`
   width: 100%;
-  margin: 32px 0 48px;
+  margin: 32px 0 32px;
 `
 
 const Title = styled.div`
@@ -84,27 +84,39 @@ const PropertyView = (props) => {
     )
   }
 
+  const renderPropertyDetails = () => {
+    return (
+      <>
+        <Title>
+          <PropertyAddress details={props.details} />
+        </Title>
+        <Separator />
+        {renderDetails()}
+        <Separator />
+        {renderDescription()}
+        <RelatedPropertiesContainer />
+      </>
+    )
+  }
+  const isScreenMin700 = useMediaQuery('(min-width:700px)')
+
   return (
     <PageContainer>
       <ImageContainer>
         <ImageCarousel imageList={props.details.pictures} />
       </ImageContainer>
       <MainContent>
-        <WithRightSideBar
-          main={
-            <>
-              <Title>
-                <PropertyAddress details={props.details} />
-              </Title>
-              <Separator />
-              {renderDetails()}
-              <Separator />
-              {renderDescription()}
-              <RelatedPropertiesContainer />
-            </>
-          }
-          sidebar={<PropertyAgentInfo />}
-        />
+        {isScreenMin700 ? (
+          <WithRightSideBar
+            main={renderPropertyDetails()}
+            sidebar={<PropertyAgentInfo />}
+          />
+        ) : (
+          <>
+            {renderPropertyDetails()}
+            <PropertyAgentInfo />
+          </>
+        )}
       </MainContent>
     </PageContainer>
   )

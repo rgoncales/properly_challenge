@@ -24,7 +24,10 @@ const Field = (props) => {
   )
 }
 
-Field.propTypes = {}
+Field.propTypes = {
+  label: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+}
 
 Field.defaultProps = {}
 

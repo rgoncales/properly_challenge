@@ -124,7 +124,19 @@ const mapStateToProps = (state) => {
   }
 }
 
-FilterMenu.propTypes = {}
+FilterMenu.propTypes = {
+  setListFilters: PropTypes.func.isRequired,
+  setBedroomFilter: PropTypes.func.isRequired,
+  setBathroomFilter: PropTypes.func.isRequired,
+  setPriceRangeFilter: PropTypes.func.isRequired,
+  setFootageRangeFilter: PropTypes.func.isRequired,
+  selectedFilters: PropTypes.shape({
+    minPrice: PropTypes.number,
+    maxPrice: PropTypes.number,
+    minFootage: PropTypes.number,
+    maxFootage: PropTypes.number,
+  }).isRequired,
+}
 
 FilterMenu.defaultProps = {}
 

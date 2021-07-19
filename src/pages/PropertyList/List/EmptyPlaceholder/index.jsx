@@ -1,10 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import styled from 'styled-components'
-import { getPropertyList } from 'redux/propertyList/action'
-import { selectFilteredPropertyList } from 'redux/propertyList/selectors'
-import PropertyCard from 'components/property/Card'
 import Typography from 'components/core/Typography'
 
 const Wrapper = styled.div`
@@ -25,7 +20,7 @@ const Display = styled.div`
 `
 const Header = styled.div``
 
-const EmptyPlaceholder = (props) => {
+const EmptyPlaceholder = () => {
   return (
     <Wrapper>
       <Display>

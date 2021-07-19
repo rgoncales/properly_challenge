@@ -24,7 +24,7 @@ Navigate to `localhost:3000/`
 
 ## Technical Overview
 - Made with create-react-app.
-- Used styled-components since I know you're using it at Properly.
+- Used styled-components. First time trying it out.
 - Used MUI for the fancier components.
   - wrapped them in my own components so I can start building a component library.
 - Unit testing covers utils.
