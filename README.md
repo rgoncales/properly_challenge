@@ -2,6 +2,8 @@
 Welcome to the SPA that let's you browse property in Middle Earth (whaaat?!?!?).  
 It's a very simple project, but I tried to build it in a way that is maintainable.
 
+**Demo** -> https://www.awesomescreenshot.com/video/4529354?key=44522bc9e0b78d8d48fff241186c9e02
+
 #### localhost:3000/ 
 - Shows a list of all properties by default. 
 - Allows you to change filtering to your liking and properties update automatically. 
