@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import styled from 'styled-components'
 import AutoComplete from 'components/input/AutoComplete'
 import RangeSlider from 'components/input/RangeSlider'
 import {
@@ -18,9 +17,11 @@ import CardContent from 'components/core/Card/Content'
 import CollapsibleContent from 'components/core/CollapsibleContent'
 import Typography from 'components/core/Typography'
 
+// these options should ideally come from the server
+// don't want to hardcode these
 const OPTIONS = {
   bathroomCount: ['1', '2', '3', '4', '5'],
-  bedroomCount: ['1', '2', '3', '4'],
+  bedroomCount: ['1', '2', '3', '4', '5'],
   maxPrice: 1000000,
   priceStep: 50000,
   maxFootage: 4000,

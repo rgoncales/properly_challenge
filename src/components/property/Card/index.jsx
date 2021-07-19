@@ -36,10 +36,10 @@ const PropertyCard = (props) => {
         <Image src={props.property.pictures[0]} />
       </ImageWrapper>
       <FooterInfo>
-        <Typography color="default" size="default" weight="500">
+        <Typography color="light" size="sm" weight="500">
           {props.property.address}
         </Typography>
-        <Typography color="dark" size="md" weight="500">
+        <Typography color="default" size="default" weight="500">
           {formatUtils.formatPrice(props.property.price)}
         </Typography>
       </FooterInfo>

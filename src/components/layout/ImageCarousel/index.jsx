@@ -26,6 +26,12 @@ const CarouselItem = styled.div`
   margin: 4px;
 `
 
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`
+
 const ImageCarousel = (props) => {
   const renderImages = () => {
     if (!props.imageList.length) {
@@ -34,7 +40,7 @@ const ImageCarousel = (props) => {
     return props.imageList.map((url, index) => {
       return (
         <CarouselItem key={`carousel-img-${index}`}>
-          <img src={url} alt="house-pic" />
+          <Image src={url} alt="house-pic" />
         </CarouselItem>
       )
     })
