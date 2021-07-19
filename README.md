@@ -1,5 +1,5 @@
 # Properly Coding Challenge
-Welcome to the SPA that allows you to browse property in Middle Earth (whaaat?!?!?).
+Welcome to the SPA that let's you browse property in Middle Earth (whaaat?!?!?).  
 It's a very simple project, but I tried to build it in a way that is maintainable.
 
 #### localhost:3000/ 
@@ -8,7 +8,7 @@ It's a very simple project, but I tried to build it in a way that is maintainabl
 - If no properties match, should show an empty placeholder.
 - Clicking on a property redirects you to the property details page.
 
-#### localhost:3000/:propertyId
+#### localhost:3000/property/:propertyId
 - Shows the overview of the property.
 - Can see stats about the property: address, #bathrooms, #bedrooms, sqft, price.
 - Can see a description of the property.
