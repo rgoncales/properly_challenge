@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Properly Coding Challenge
+Welcome to the SPA that allows you to browse property in Middle Earth (whaaat?!?!?).
+It's a very simple project, but I tried to build it in a way that is maintainable.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### localhost:3000/ 
+- Shows a list of all properties by default. 
+- Allows you to change filtering to your liking and properties update automatically. 
+- If no properties match, should show an empty placeholder.
+- Clicking on a property redirects you to the property details page.
 
-## Available Scripts
+#### localhost:3000/:propertyId
+- Shows the overview of the property.
+- Can see stats about the property: address, #bathrooms, #bedrooms, sqft, price.
+- Can see a description of the property.
+- Can see a sticky agent card displaying agent info.
+  - Can see 'Book A Viewing' button that shows an alert.
 
-In the project directory, you can run:
+## Instructions
+Start project: `yarn start`
 
-### `yarn start`
+Test project: `yarn test`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Navigate to `localhost:3000/`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technical Overview
+- Made with create-react-app.
+- Used styled-components since I know you're using it at Properly.
+- Used MUI for the fancier components.
+  - wrapped them in my own components so I can start building a component library.
+- Unit testing covers utils.
+  - mainly focused on filtering util.
+- Every component I used, was actually made into a component.
+- Tried to stick to atomic design to separate pages and components. 
+- Redux was built with re-ducks structure, and dispatches mock actions to retrieve data.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Other
+Added user stories as a PDF in **/docs** folder.
